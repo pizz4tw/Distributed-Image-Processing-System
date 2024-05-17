@@ -12,7 +12,8 @@ sudo apt-get install nfs-kernel-server nfs-common
 echo "/shared n2(rw,sync,no_subtree_check) n3(rw,sync,no_subtree_check)" | sudo tee -a /etc/exports
 sudo exportfs -a
 sudo systemctl restart nfs-kernel-server
-
+```
+```
 #SLAVE NODE
 sudo apt-get install nfs-common
 sudo mkdir -p /shared
