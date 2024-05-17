@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing Progress</title>
+</head>
+<body>
+    <h1>Image Processing in Progress</h1>
+    <div id="progressBarContainer">
+        <div id="progressBar"></div>
+    </div>
+    <div id="status"></div>
+
+    <script>
+        var task_id = "{{ task_id }}";
+        var progressBar = document.getElementById('progressBar');
+        var statusDiv = document.getElementById('status');
+
+        function checkStatus() {
+            fetch('/status/' + task_id)
+            .then(response => response.json())
+            .then(data => {
+                var completed = data.completed;
+                var total = data.total;
+                var progress = Math.round((completed / total) * 100);
+
+                progressBar.style.width = progress + '%';
+                statusDiv.innerText = 'Processing ' + completed + ' of ' + total + ' images...';
+
+                if (completed >= total) {
+                    // If all images are processed, show the "Download All" button
+                    statusDiv.innerHTML = 'All images processed successfully! <a href="/result/' + task_id + '">Download All</a>';
+                } else {
+                    // If not all images are processed, check again after 1 second
+                    setTimeout(checkStatus, 1000);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Start checking the status when the page is loaded
+        checkStatus();
+    </script>
+</body>
+</html>
