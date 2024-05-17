@@ -5,16 +5,18 @@ A distributed image processing system that runs on a cluster of computers on the
 This system assumes you already set-up an EC2 Cluster environment between master and slave nodes, if you don't know how you can refer to this link: 
 https://blog.glennklockwood.com/2013/04/quick-mpi-cluster-setup-on-amazon-ec2.html
 
-Make sure you modify the security groups to allow for HTTP requests on port 5000 from 0.0.0.0 (anywhere IPv4) also setup the /shared folder between the 3 machines using these commands :
+Make sure you modify the security groups to allow for HTTP requests on port 5000 from 0.0.0.0 (anywhere IPv4) also setup the /shared folder between the 3 machines using these commands:
+MASTER NODE 
 ```
-#MASTER NODE 
+
 sudo apt-get install nfs-kernel-server nfs-common
 echo "/shared n2(rw,sync,no_subtree_check) n3(rw,sync,no_subtree_check)" | sudo tee -a /etc/exports
 sudo exportfs -a
 sudo systemctl restart nfs-kernel-server
 ```
+SLAVE NODE
 ```
-#SLAVE NODE
+
 sudo apt-get install nfs-common
 sudo mkdir -p /shared
 sudo mount (master_machine_name):/shared /shared
