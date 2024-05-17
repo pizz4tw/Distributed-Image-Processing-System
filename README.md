@@ -9,7 +9,6 @@ Make sure you modify the security groups to allow for HTTP requests on port 5000
 
 #MASTER NODE 
 ```
-
 sudo apt-get install nfs-kernel-server nfs-common
 echo "/shared n2(rw,sync,no_subtree_check) n3(rw,sync,no_subtree_check)" | sudo tee -a /etc/exports
 sudo exportfs -a
@@ -17,13 +16,11 @@ sudo systemctl restart nfs-kernel-server
 ```
 #SLAVE NODE
 ```
-
 sudo apt-get install nfs-common
 sudo mkdir -p /shared
 sudo mount (master_machine_name):/shared /shared
 ```
 Now you should have a shared folder between the machines that they can communicate on and distribute the tasks between them.
-
 After setting up the environment you can run the scripts as guided below.
 
 
