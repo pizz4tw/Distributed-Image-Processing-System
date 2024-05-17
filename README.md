@@ -21,6 +21,7 @@ sudo mkdir -p /shared
 sudo mount (master_machine_name):/shared /shared
 ```
 Now you should have a shared folder between the machines that they can communicate on and distribute the tasks between them.
+
 After setting up the environment you can run the scripts as guided below.
 
 
