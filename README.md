@@ -55,4 +55,5 @@ NOTE: needs to be in the /shared directory too.
 
 # End-User guide
 -It is preferable to upload .jpg & .png files (.gif,.avif..etc. won't be handled correctly and may cause failures)
+
 -Preferable to upload < 50 photos for complete results (no images will be missed in the processing step)
