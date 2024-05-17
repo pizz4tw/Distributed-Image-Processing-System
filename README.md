@@ -7,7 +7,7 @@ OpenCV,Flask
 sudo apt install python3-opencv
 sudo apt install python3-flask
 ```
-If any other mudles are needed install it using:
+If any other modules are needed install it using:
 ```
 sudo apt install python3-(package_name)
 ```
