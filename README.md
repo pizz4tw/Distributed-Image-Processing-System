@@ -49,4 +49,7 @@ This script is put in the /shared directory where it is seen by all the machines
 
 You can also add more operations using the OpenCV library in python.
 
+# del_jpg.sh
+A simple shell script that runs after the user downloads the pictures as a zip file to free up space in the /shared directory by deleting all the (jpg,jpeg,png....etc) files.
+NOTE: needs to be in the /shared directory too.
 
