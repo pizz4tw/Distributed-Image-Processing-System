@@ -25,7 +25,8 @@ After setting up the environment you can run the scripts as guided below.
 
 
 # Image_Server.py
-The main node (master) running which has a Flask web server to receive the user photo uploads. (up to 50 tested on t3.micro free tier, 3 machines (1 master + 2 slaves))
+This script runs on the main node (master) which has a Flask web server that receives the user photo uploads. (up to 50 tested on t3.micro free tier, 3 machines (1 master + 2 slaves))
 To run this script it needs to have the templates folder ( in the same directory containing the index.html + processing.html files.)
-After the server is run the user can input the IPaddress:PORT (which in our case IPaddressOfMaster:5000) then they are greeted with a 
+After the server is run the user can input the IPaddress:PORT (which in our case IPaddressOfMaster:5000) in their web browser then they are greeted with a page that has an upload button to upload pictures then they can select one of the image processing operations available which are (Canny Edge detector, Blurring(Gaussian), Median filter (for S&P noises) , Brightness Up/Down, Color negation(inversion)).
+
 
